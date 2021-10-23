@@ -3,12 +3,15 @@
     <div class="content">
         {{ with .title }}<h1>{{ . }}</h1>{{ end }}
         {{ with .subtitle }}<p class="major">{{ . | safeHTML }}</p>{{ end }}
-        {{ with .content }}<p>{{ . | safeHTML }}</p>{{ end }}
+<!--        {{ with .content }}<p>{{ . | safeHTML }}</p>{{ end }}-->
         {{ with .button }}<ul class="actions stacked">
             <li><a href="{{ .link }}" class="button primary large wide smooth-scroll-middle">{{ .label }}</a></li>
+            <li><a href="{{ .link2 }}" class="button primary large wide smooth-scroll-middle">{{ .label2 }}</a></li>
+            <li><a href="{{ .link3 }}" class="button primary large wide smooth-scroll-middle">{{ .label3 }}</a></li>
         </ul>{{ end }}
     </div>
     {{ with .image }}<div class="image">
-        <img src="{{.}}" alt="Hugo Story" />
-    </div>{{end}}
+        <img src="{{.}}" alt="Drawing of George Fredrick Handel in his house by John Buckler, 1839" />
+    </div>
+    {{end}}
 </section>

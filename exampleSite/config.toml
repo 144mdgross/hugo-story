@@ -2,7 +2,7 @@
 ## Basic Configuration
 ## -----------------------------------------------
 
-title = "Hugo Story"
+title = "Handel House of America"
 theme = "hugo-story"
 
 
@@ -20,8 +20,8 @@ disableKinds = ["taxonomy", "taxonomyTerm", "section"]
 
 [Params]
   description = "A (modular, highly tweakable) responsive one-page theme for Hugo"
-  logo = "images/banner.jpg"
-  favicon = true
+  logo = "images/handelhouse-marker.jpeg"
+  favicon = false
 
 [Params.social]
   github = "https://github.com/caressofsteel/"
