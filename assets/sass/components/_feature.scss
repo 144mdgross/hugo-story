@@ -391,6 +391,8 @@
 /* Feature (style2) */
 
 	.feature.style2 {
+        $circle-size: 21rem;
+
 		@include padding(_size(padding, default) * 0.75, _size(padding, default) * 0.75);
 		@include vendor('align-items', 'center');
 		@include vendor('display', 'flex');
@@ -402,12 +404,27 @@
 		.content {
 			@include padding(_size(padding, default) * 0.75, _size(padding, default) * 0.75);
 			position: relative;
-			width: (_size(inner) * 0.625);
-			max-width: 50%;
-			border-radius: _size(border-radius-alt);
+			width: $circle-size;
+            height: $circle-size;
+            line-height: .5rem;
+            //text-align: center;
+			//max-width: 30%;
 			margin-bottom: _size(element-margin);
 			z-index: 1;
-		}
+            border-radius: 100%;
+            border: 1px solid black;
+            //display: flex; /* or inline-flex */
+            //align-items: center;
+            //justify-content: center;
+
+          .circle {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+          }
+
+        }
 
         h2 {
           font-weight: bolder;
@@ -493,11 +510,6 @@
 				&.orient-right {
 					@include vendor('justify-content', 'flex-end');
 					padding-right: 0;
-
-					.content {
-						border-top-right-radius: 0;
-						border-bottom-right-radius: 0;
-					}
 				}
 
 			// Content Alignment.
@@ -940,16 +952,16 @@
 	@mixin color-feature($p: null) {
 		.feature {
             .content {
-              background-color: transparentize(_palette(invert, fg-bold), 0.25);
+              background-color: transparentize(_palette(invert, fg-bold), 0.15);
             }
 			.image {
-				background-color: transparentize(_palette($p, fg-bold), 0.25);
+				background-color: transparentize(_palette($p, fg-bold), 0.15);
 			}
 
 			@if ($p != 'invert') {
 				&.invert {
 					.image {
-						background-color: transparentize(_palette(invert, fg-bold), 0.25);
+						background-color: transparentize(_palette(invert, fg-bold), 0.15);
 					}
 				}
 			}

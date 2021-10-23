@@ -1,11 +1,13 @@
 <!-- Feature added by 144mdgross -->
 <section class="feature {{ .style }}"{{ with .id }} id="{{ . }}"{{ end }}>
     <div class="content {{ .custom }}">
+        <div class="circle">
         {{ with .title }}<h2>{{ . }}</h2>{{ end }}
-        {{ with .content }}<p>{{ . | safeHTML }}</p>{{ end }}
         {{ with .button }}<ul class="actions stacked">
             <li><a rel="noreferrer" href="{{ .link }}" class="button primary smooth-scroll-middle">{{ .label }}</a></li>
         </ul>{{ end }}
+        {{ with .smalllink }}<a rel="noreferrer" href="{{ .link }}" class="smooth-scroll-middle"><p>{{ .label }}</p></a>{{ end }}
+        </div>
     </div>
     {{ with .image }}<div class="image">
         <img src="{{ . }}" alt="" />
