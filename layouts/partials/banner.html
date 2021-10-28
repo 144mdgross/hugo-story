@@ -9,9 +9,14 @@
             <li><a href="{{ .link2 }}" class="button primary large wide smooth-scroll-middle">{{ .label2 }}</a></li>
             <li><a href="{{ .link3 }}" class="button primary large wide smooth-scroll-middle">{{ .label3 }}</a></li>
         </ul>{{ end }}
+
     </div>
     {{ with .image }}<div class="image">
         <img src="{{.}}" alt="Drawing of George Fredrick Handel in his house by John Buckler, 1839" />
     </div>
     {{end}}
+
 </section>
+<div class="credit content-align-left">
+    <span>{{ .credit }}</span>
+</div>
