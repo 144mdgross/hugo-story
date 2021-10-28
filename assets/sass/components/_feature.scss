@@ -391,159 +391,308 @@
 /* Feature (style2) */
 
 	.feature.style2 {
-        $circle-size: 21rem;
 
-		@include padding(_size(padding, default) * 0.75, _size(padding, default) * 0.75);
-		@include vendor('align-items', 'center');
-		@include vendor('display', 'flex');
-		@include vendor('justify-content', 'center');
-		position: relative;
-		text-align: center;
-		overflow-x: hidden;
-
-		.content {
 			@include padding(_size(padding, default) * 0.75, _size(padding, default) * 0.75);
+			@include vendor('align-items', 'center');
+			@include vendor('display', 'flex');
+			@include vendor('justify-content', 'center');
 			position: relative;
-			width: $circle-size;
-            height: $circle-size;
-            line-height: .5rem;
-			margin-bottom: _size(element-margin);
-			z-index: 1;
-            border-radius: 100%;
-            border: 1px solid black;
+			text-align: center;
+			overflow-x: hidden;
 
-          .circle {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%,-50%);
-          }
+		&.circle {
+			$circle-size: 21rem;
 
-        }
+			.content {
+				@include padding(_size(padding, default) * 0.75, _size(padding, default) * 0.75);
+				position: relative;
+				width: $circle-size;
+				height: $circle-size;
+				line-height: .5rem;
+				margin-bottom: _size(element-margin);
+				z-index: 1;
+				border-radius: 100%;
+				border: 1px solid black;
+				text-align: center;
 
-        h2 {
-          font-weight: bolder;
-        }
+				.circle {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+				}
 
-		.image {
-			@include vendor('flex-grow', '0');
-			@include vendor('flex-shrink', '0');
-			position: absolute;
-			width: 100%;
-			height: 100%;
-			top: 0;
-			left: 0;
-			border-radius: 0;
+			}
 
-			img {
-				@include vendor('object-fit', 'cover');
-				@include vendor('object-position', 'center');
-				display: block;
+			h2 {
+				font-weight: bolder;
+			}
+
+			.image {
+				@include vendor('flex-grow', '0');
+				@include vendor('flex-shrink', '0');
 				position: absolute;
-				top: 0;
-				left: 0;
 				width: 100%;
 				height: 100%;
+				top: 0;
+				left: 0;
 				border-radius: 0;
+
+				img {
+					@include vendor('object-fit', 'cover');
+					@include vendor('object-position', 'center');
+					display: block;
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					border-radius: 0;
+				}
 			}
-		}
 
-		@include breakpoint('<=xlarge') {
-			@include padding(_size(padding, xlarge) * 0.75, _size(padding, xlarge) * 0.75);
-
-			.content {
+			@include breakpoint('<=xlarge') {
 				@include padding(_size(padding, xlarge) * 0.75, _size(padding, xlarge) * 0.75);
+
+				.content {
+					@include padding(_size(padding, xlarge) * 0.75, _size(padding, xlarge) * 0.75);
+				}
 			}
-		}
 
-		@include breakpoint('<=large') {
-			@include padding(_size(padding, large), _size(padding, large) * 0.75);
-
-			.content {
+			@include breakpoint('<=large') {
 				@include padding(_size(padding, large), _size(padding, large) * 0.75);
+
+				.content {
+					@include padding(_size(padding, large), _size(padding, large) * 0.75);
+				}
 			}
-		}
 
-		@include breakpoint('<=medium') {
-			@include padding(_size(padding, medium), _size(padding, medium));
+			@include breakpoint('<=medium') {
+				@include padding(_size(padding, medium), _size(padding, medium));
 
-			.content {
-				@include padding(_size(padding, medium) * 1.25, _size(padding, medium) * 0.75);
+				.content {
+					@include padding(_size(padding, medium) * 1.25, _size(padding, medium) * 0.75);
+				}
 			}
-		}
 
-		@include breakpoint('<=small') {
-			@include padding(_size(padding, small), _size(padding, small));
+			@include breakpoint('<=small') {
+				@include padding(_size(padding, small), _size(padding, small));
 
-			.content {
-				@include padding(_size(padding, small) * 1.25, _size(padding, small) * 0.75);
+				.content {
+					@include padding(_size(padding, small) * 1.25, _size(padding, small) * 0.75);
+				}
 			}
-		}
 
-		// Modifiers.
+			// Modifiers.
 
 			// Size.
-				&.fullscreen {
-					min-height: 100vh;
-				}
+			&.fullscreen {
+				min-height: 100vh;
+			}
 
 			// Orientation.
-				&.orient-left {
-					@include vendor('justify-content', 'flex-start');
-					padding-left: 0;
+			&.orient-left {
+				@include vendor('justify-content', 'flex-start');
+				padding-left: 0;
 
-					.content {
-						border-top-left-radius: 0;
-						border-bottom-left-radius: 0;
-					}
+				.content {
+					border-top-left-radius: 0;
+					border-bottom-left-radius: 0;
 				}
+			}
 
-				&.orient-center {
-					// ...
-				}
+			&.orient-center {
+				// ...
+			}
 
-				&.orient-right {
-					@include vendor('justify-content', 'flex-end');
-					padding-right: 0;
-				}
+			&.orient-right {
+				@include vendor('justify-content', 'flex-end');
+				padding-right: 0;
+			}
 
 			// Content Alignment.
-				&.content-align-left {
-					text-align: left;
-				}
+			&.content-align-left {
+				text-align: left;
+			}
 
-				&.content-align-center {
-					// ...
-				}
+			&.content-align-center {
+				// ...
+			}
 
-				&.content-align-right {
-					text-align: right;
-				}
+			&.content-align-right {
+				text-align: right;
+			}
 
 			// Image Position.
-				&.image-position-left {
-					.image {
-						img {
-							@include vendor('object-position', 'left');
-						}
+			&.image-position-left {
+				.image {
+					img {
+						@include vendor('object-position', 'left');
 					}
 				}
+			}
 
-				&.image-position-center {
-					.image {
-						img {
-							// ...
-						}
+			&.image-position-center {
+				.image {
+					img {
+						// ...
 					}
 				}
+			}
 
-				&.image-position-right {
-					.image {
-						img {
-							@include vendor('object-position', 'right');
-						}
+			&.image-position-right {
+				.image {
+					img {
+						@include vendor('object-position', 'right');
 					}
 				}
+			}
+		}
+
+			.content {
+				@include padding(_size(padding, default) * 0.3, _size(padding, default) * 0.3);
+				position: relative;
+				width: 30%;
+				height: inherit;
+				line-height: 1.2rem;
+				margin-bottom: _size(element-margin);
+				z-index: 1;
+				border-radius: 3%;
+				font-weight: 300;
+			}
+
+			.center {
+				text-align: center;
+			}
+
+			h2 {
+				font-weight: bolder;
+				text-align: center;
+			}
+
+			p {
+				    margin: 0 0 1rem 0;
+			}
+
+			.image {
+				@include vendor('flex-grow', '0');
+				@include vendor('flex-shrink', '0');
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				border-radius: 0;
+
+				img {
+					@include vendor('object-fit', 'cover');
+					@include vendor('object-position', 'center');
+					display: block;
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					border-radius: 0;
+				}
+			}
+
+			@include breakpoint('<=xlarge') {
+				@include padding(_size(padding, xlarge) * 0.75, _size(padding, xlarge) * 0.75);
+
+				.content {
+					@include padding(_size(padding, xlarge) * 0.75, _size(padding, xlarge) * 0.75);
+				}
+			}
+
+			@include breakpoint('<=large') {
+				@include padding(_size(padding, large), _size(padding, large) * 0.75);
+
+				.content {
+					@include padding(_size(padding, large), _size(padding, large) * 0.75);
+				}
+			}
+
+			@include breakpoint('<=medium') {
+				@include padding(_size(padding, medium), _size(padding, medium));
+
+				.content {
+					@include padding(_size(padding, medium) * 1.25, _size(padding, medium) * 0.75);
+				}
+			}
+
+			@include breakpoint('<=small') {
+				@include padding(_size(padding, small), _size(padding, small));
+
+				.content {
+					@include padding(_size(padding, small) * 1.25, _size(padding, small) * 0.75);
+				}
+			}
+
+			// Modifiers.
+
+			// Size.
+			&.fullscreen {
+				min-height: 100vh;
+			}
+
+			// Orientation.
+			&.orient-left {
+				@include vendor('justify-content', 'flex-start');
+				padding-left: 0;
+
+				.content {
+					border-top-left-radius: 0;
+					border-bottom-left-radius: 0;
+				}
+			}
+
+			&.orient-center {
+				// ...
+			}
+
+			&.orient-right {
+				@include vendor('justify-content', 'flex-end');
+				padding-right: 0;
+			}
+
+			// Content Alignment.
+			&.content-align-left {
+				text-align: left;
+			}
+
+			&.content-align-center {
+				// ...
+			}
+
+			&.content-align-right {
+				text-align: right;
+			}
+
+			// Image Position.
+			&.image-position-left {
+				.image {
+					img {
+						@include vendor('object-position', 'left');
+					}
+				}
+			}
+
+			&.image-position-center {
+				.image {
+					img {
+						// ...
+					}
+				}
+			}
+
+			&.image-position-right {
+				.image {
+					img {
+						@include vendor('object-position', 'right');
+					}
+				}
+			}
 
 	}
 
@@ -947,16 +1096,16 @@
 	@mixin color-feature($p: null) {
 		.feature {
             .content {
-              background-color: transparentize(_palette(invert, fg-bold), 0.15);
+              background-color: transparentize(_palette(invert, fg-bold), 0.1);
             }
 			.image {
-				background-color: transparentize(_palette($p, fg-bold), 0.15);
+				background-color: transparentize(_palette($p, fg-bold), 0.1);
 			}
 
 			@if ($p != 'invert') {
 				&.invert {
 					.image {
-						background-color: transparentize(_palette(invert, fg-bold), 0.15);
+						background-color: transparentize(_palette(invert, fg-bold), 0.1);
 					}
 				}
 			}
