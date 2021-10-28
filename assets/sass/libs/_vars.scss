@@ -38,8 +38,8 @@
 
 // Font.
 	$font: (
-		family:				('Source Sans Pro', Helvetica, sans-serif),
-		family-fixed:		('Courier New', monospace),
+		family:             ('Garamond', serif),
+		family-fixed:       ('Garamond', serif),
 		weight:				300,
 		weight-bold:		400,
 		kerning:			-0.05em,
@@ -55,9 +55,11 @@
 		color5:				#7794ce,
 		color6:				#64abb4,
 		color7:				#6ba78c,
+		color8:             #455daa,
 
 		bg:					#ffffff,
 		bg-alt:				#eeeeee,
+		bg-parchment:       #e8ce9d,
 		fg:					#000000,
 		fg-bold:			#000000,
 		fg-light:			rgba(0,0,0,0.75),

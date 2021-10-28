@@ -1094,6 +1094,10 @@
 // Mixin
 
 	@mixin color-feature($p: null) {
+		.parchment {
+			background-color: transparentize(_palette(bg-parchment), 0.1);;
+		}
+
 		.feature {
             .content {
               background-color: transparentize(_palette(invert, fg-bold), 0.1);
