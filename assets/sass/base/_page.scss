@@ -48,7 +48,18 @@
 
 	}
 
+	// quick and dirty customizations
 	footer {
 		font-size: .75rem;
 		padding: .5rem;
+	}
+
+	.credit {
+		font-size: .6rem;
+		padding: 0 .5rem;
+		border-color: transparent !important;
+	}
+
+	.credit-right {
+		text-align: right;
 	}

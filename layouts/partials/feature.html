@@ -9,7 +9,6 @@
         </ul>{{ end }}
         {{ with .content }}<p>{{ . | safeHTML }}</p>{{ end }}
         {{ with .tinylink }}<a rel="noreferrer" href="{{ .link }}" class="smooth-scroll-middle {{ .style }}"><p>{{ .label }}</p></a>{{ end }}
-        </div>
     </div>
     {{ with .image }}<div class="image">
         <img src="{{ . }}" alt="" />

@@ -11,7 +11,7 @@
         <img src="{{ . }}" alt="" />
     </div>{{ end }}
 </section>
-<div class="credit content-align-right">
+<div class="credit {{ .creditClass }}">
     <span>{{ .credit }}</span>
     {{ with .creditlink }}<a rel="noreferrer noopener" href="{{ .link }}" target="_blank" class="{{ .style }}">{{ .label | safeHTML }}</a>{{ end }}
 </div>
