@@ -251,7 +251,7 @@
 		.image {
 			@include vendor('flex-grow', '0');
 			@include vendor('flex-shrink', '0');
-			width: 35%;
+			width: 55%;
 			min-width: 25rem;
 			border-radius: 0;
 
@@ -285,6 +285,166 @@
 				@include padding(_size(padding, medium) * 1.25, _size(padding, medium));
 				width: 50%;
 				min-width: 0;
+			}
+
+			.image {
+				width: 50%;
+				min-width: 0;
+			}
+		}
+
+		@include breakpoint('<=small') {
+			.content {
+				@include padding(_size(padding, small) * 1.25, _size(padding, small));
+			}
+
+			@include orientation(portrait) {
+				@include vendor('flex-direction', 'column-reverse');
+				text-align: center !important;
+
+				.content {
+					width: 100%;
+				}
+
+				.image {
+					width: 100%;
+
+					img {
+						position: relative;
+					}
+				}
+			}
+		}
+
+		// Modifiers.
+
+			// Orientation.
+				&.orient-left {
+					// ...
+				}
+
+				&.orient-right {
+					@include vendor('flex-direction', 'row-reverse');
+
+					@include breakpoint('<=small') {
+						@include orientation(portrait) {
+							@include vendor('flex-direction', 'column-reverse');
+						}
+					}
+				}
+
+			// Content Alignment.
+				&.content-align-left {
+					// ...
+				}
+
+				&.content-align-center {
+					text-align: center;
+				}
+
+				&.content-align-right {
+					text-align: right;
+				}
+
+			// Image Position.
+				&.image-position-left {
+					.image {
+						img {
+							@include vendor('object-position', 'left');
+						}
+					}
+				}
+
+				&.image-position-center {
+					// ...
+				}
+
+				&.image-position-right {
+					.image {
+						img {
+							@include vendor('object-position', 'right');
+						}
+					}
+				}
+
+	}
+
+	/* Spotlight (style11) */
+	/* Based on spotlight style1 */
+	/* incremented in this way to avoid conflicts with hugo-story */
+
+	.spotlight.style11 {
+		@include vendor('align-items', 'stretch');
+		@include vendor('display', 'flex');
+		@include vendor('flex-direction', 'row');
+		@include vendor('justify-content', 'flex-end');
+		position: relative;
+		overflow-x: hidden;
+		text-align: left;
+
+		.content {
+			@include padding(_size(padding, default), _size(padding, default));
+			@include vendor('align-self', 'center');
+			@include vendor('flex-grow', '1');
+			@include vendor('flex-shrink', '1');
+			width: 65%;
+			max-width: _size(inner);
+			margin: 0 auto;
+
+			.text {
+				max-height: 40rem;
+				overflow-y: scroll;
+				width: 100%;
+			}
+
+
+			strong {
+				font-weight: bold;
+			}
+		}
+
+		.image {
+			@include vendor('flex-grow', '0');
+			@include vendor('flex-shrink', '0');
+			width: 55%;
+			min-width: 25rem;
+			border-radius: 0;
+
+			img {
+				@include vendor('object-fit', 'cover');
+				@include vendor('object-position', 'center');
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				border-radius: 0;
+			}
+		}
+
+		@include breakpoint('<=xlarge') {
+			.content {
+				@include padding(_size(padding, xlarge), _size(padding, xlarge));
+			}
+		}
+
+		@include breakpoint('<=large') {
+			.content {
+				@include padding(_size(padding, large), _size(padding, large));
+			}
+		}
+
+		@include breakpoint('<=medium') {
+			.content {
+				@include padding(_size(padding, medium) * 1.25, _size(padding, medium));
+				width: 50%;
+				min-width: 0;
+
+				.text {
+					max-height: 30rem;
+				}
+
 			}
 
 			.image {
@@ -404,6 +564,154 @@
 				width: 100%;
 				height: 100%;
 				border-radius: 100%;
+			}
+		}
+
+		@include breakpoint('<=xlarge') {
+			@include padding(_size(padding, xlarge), _size(padding, xlarge));
+		}
+
+		@include breakpoint('<=large') {
+			@include padding(_size(padding, large), _size(padding, large));
+		}
+
+		@include breakpoint('<=medium') {
+			@include padding(_size(padding, medium) * 1.25, _size(padding, medium));
+
+			.image {
+				width: ($image-size * 0.875);
+				height: ($image-size * 0.875);
+			}
+		}
+
+		@include breakpoint('<=small') {
+			@include padding(_size(padding, small) * 1.25, _size(padding, small));
+			@include vendor('align-items', 'flex-start');
+
+			.image {
+				width: ($image-size * 0.75);
+				height: ($image-size * 0.75);
+				margin: 0 (_size(element-margin) * 1) _size(element-margin) 0;
+			}
+		}
+
+		@include orientation(portrait) {
+			@include vendor('align-items', 'center');
+			@include vendor('flex-direction', 'column-reverse');
+			text-align: center !important;
+
+			.content {
+				width: 34rem;
+				max-width: 100%;
+			}
+
+			.image {
+				margin-right: 0;
+			}
+		}
+
+		// Modifiers.
+
+			// Orientation.
+				&.orient-left {
+					@include vendor('flex-direction', 'row');
+
+					.image {
+						margin: 0 0 _size(element-margin) (_size(element-margin) * 1.75);
+					}
+
+					@include breakpoint('<=small') {
+						.image {
+							margin: 0 0 _size(element-margin) (_size(element-margin) * 1);
+						}
+					}
+
+					@include orientation(portrait) {
+						@include vendor('flex-direction', 'column-reverse');
+
+						.image {
+							margin-left: 0;
+						}
+					}
+				}
+
+				&.orient-right {
+					// ...
+				}
+
+			// Content Alignment.
+				&.content-align-left {
+					// ...
+				}
+
+				&.content-align-center {
+					text-align: center;
+				}
+
+				&.content-align-right {
+					text-align: right;
+				}
+
+			// Image Position.
+				&.image-position-left {
+					.image {
+						img {
+							@include vendor('object-position', 'left');
+						}
+					}
+				}
+
+				&.image-position-center {
+					// ...
+				}
+
+				&.image-position-right {
+					.image {
+						img {
+							@include vendor('object-position', 'right');
+						}
+					}
+				}
+
+	}
+
+	/* Spotlight (style21) */
+	/* A square version of spotlight 2 */
+   // Incremented a lot to avoid conflicts with any future hugo story updates that may be wanted
+
+	.spotlight.style21 {
+		$image-size: 40rem;
+		$content-size: (_size(inner) * 0.9) - (_size(element-margin) * 1.75);
+
+		@include padding(_size(padding, default), _size(padding, default));
+		@include vendor('align-items', 'center');
+		@include vendor('display', 'flex');
+		@include vendor('flex-direction', 'row-reverse');
+		@include vendor('justify-content', 'center');
+		position: relative;
+		overflow-x: hidden;
+		text-align: left;
+
+		.content {
+			width: $content-size;
+			max-width: 100%;
+		}
+
+		.image {
+			@include vendor('flex-grow', '0');
+			@include vendor('flex-shrink', '0');
+			width: $image-size;
+			height: $image-size;
+			//border-radius: 100%;
+			margin: 0 (_size(element-margin) * 1.75) _size(element-margin) 0;
+
+			img {
+				@include vendor('object-fit', 'cover');
+				@include vendor('object-position', 'center');
+				display: block;
+				width: 100%;
+				height: 100%;
+				//border-radius: 100%;
 			}
 		}
 
