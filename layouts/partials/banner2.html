@@ -1,0 +1,21 @@
+<!-- Banner -->
+<section class="spotlight {{ .style }}" >
+    <div class="content">
+        {{ with .title }}<h2>{{ . }}</h2>{{ end }}
+        <span {{ with .id }} id="{{ . }}"{{ end }}></span>
+        {{ with .subtitle }}<p>{{ . | safeHTML }}</p>{{ end }}
+        {{ with .button }}<ul class="actions stacked">
+            <li><a href="{{ .link }}" class="button primary large wide smooth-scroll-middle">{{ .label }}</a></li>
+        </ul>{{ end }}
+        {{ with .content }}<p>{{  . | safeHTML }}</p>{{ end }}
+        {{ with .tinylink }}<a rel="noreferrer" href="{{ .link }}" class="smooth-scroll-middle {{ .style }}"><p>{{ .label }}</p></a>{{ end }}
+
+    </div>
+    {{ with .image }}<div class="image">
+        <img src="{{.}}" alt="{{.}}" />
+    </div>
+    {{end}}
+</section>
+<div class="credit content-align-left">
+    <span>{{ .credit }}</span>
+</div>
