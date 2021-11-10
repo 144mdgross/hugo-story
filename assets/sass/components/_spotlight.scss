@@ -381,7 +381,6 @@
 		position: relative;
 		overflow-x: hidden;
 		text-align: left;
-		max-height: 100vh;
 
 		.content {
 			@include padding(_size(padding, default), _size(padding, default));
