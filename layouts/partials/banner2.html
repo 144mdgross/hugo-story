@@ -4,7 +4,7 @@
         {{ with .title }}<h2>{{ . }}</h2>{{ end }}
         {{ with .subtitle }}<p>{{ . | safeHTML }}</p>{{ end }}
         {{ with .button }}<ul class="actions stacked">
-            <li><a href="{{ .link }}" class="button primary large wide smooth-scroll-middle">{{ .label }}</a></li>
+            <li><a rel="noopener noreferrer" href="{{ .link }}" class="button primary large wide smooth-scroll-middle">{{ .label }}</a></li>
         </ul>{{ end }}
         <span {{ with .id }} id="{{ . }}"{{ end }}></span>
         {{ with .content }}<p>{{  . | safeHTML }}</p>{{ end }}
