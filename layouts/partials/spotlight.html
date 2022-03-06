@@ -3,13 +3,26 @@
     <div class="content">
         {{ with .title }}<h2>{{ . }}</h2>{{ end }}
         {{ with .content }}<p class="text">{{ . | safeHTML }}</p>{{ end }}
-        {{ with .button }}<ul class="actions stacked">
-            <li><a rel="noreferrer noopener" href="{{ .link }}" class="button primary smooth-scroll-middle">{{ .label }}</a></li>
-        </ul>{{ end }}
+            {{ with .scrollMarkers }}
+    <div class="scrollMarkers">
+        <div class="scrollMarkerTop">&#9650;</div>
+        <div class="scrollMarkerBottom">&#9660;</div>
     </div>
-    {{ with .image }}<div class="image">
+    {{ end }}
+        {{ with .button }}<ul class="actions stacked">
+            <li>
+                <a rel="noreferrer noopener" href="{{ .link }}" class="button primary smooth-scroll-middle">{{ .label }}</a>
+            </li>
+        </ul>{{ end }}
+        {{ with .externalLink }}<span>{{ .label }} </span>
+            <a rel="noreferrer noopener" target="_blank" href="{{ .link }}" class="smooth-scroll-middle {{ .style }}">{{.labelLink}}</a>
+        {{ end }}
+    </div>
+    {{ with .image }}
+    <div class="image">
         <img src="{{ . }}" alt="" />
-    </div>{{ end }}
+    </div>
+    {{ end }}
 </section>
 <div class="credit {{ .creditClass }}">
     <span>{{ .credit }}</span>

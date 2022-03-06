@@ -403,6 +403,15 @@
 			}
 		}
 
+		.scrollMarkers {
+			font-size: 30px;
+			position: absolute;
+			top: 35%;
+			left: 0;
+			color: #837164;
+			padding: 10px;
+		}
+
 		.image {
 			@include vendor('flex-grow', '0');
 			@include vendor('flex-shrink', '0');
@@ -420,6 +429,13 @@
 				width: 100%;
 				height: 100%;
 				border-radius: 0;
+			}
+		}
+
+		@include breakpoint('>=xlarge') {
+			.scrollMarkers {
+				left: 2rem;
+				top: 40%;
 			}
 		}
 
@@ -465,6 +481,10 @@
 				.content {
 					width: 100%;
 				}
+
+			.scrollMarkers {
+				display: none;
+			}
 
 				.image {
 					width: 100%;
